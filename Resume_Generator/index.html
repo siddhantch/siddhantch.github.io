@@ -1,0 +1,247 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="form.css"/>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <div class="header" style="background-color: honeydew;">Quollab's Resume Generator</div>
+        <div class="inputMain" style="background-color: cornsilk;"> 
+            <div class="inputHeader">INPUT YOUR DETAILS</div>
+            <hr>
+            <div class="categories">
+                <button class="personal" onclick="layout1()">Personal</button>
+                <button class="education" onclick="layout2()">Education, Achievements &  Skills</button>
+                <button class="project" onclick="layout3()">Work & Projects</button>
+            </div>
+            <div class="inputForm" > 
+                <form name='registration' onSubmit="return false;">  
+                    <ul>  
+                        <!-- <li><label for="userid">User id:</label></li>  
+                        <li><input type="text" name="userid" size="12" /></li>  
+        
+                        <li><label for="passid">Password:</label></li>  
+                        <li><input type="password" name="passid" size="12" /></li>   -->
+        
+                        <li><label for="username">Name:</label></li>  
+                        <li><input type="text" name="username" size="50" /></li>  
+        
+                        <li><label for="address">Address:</label></li>  
+                        <li><input type="text" name="address" size="50" /></li>  
+        
+                        <li><label for="country">Country:</label></li>  
+                        <li>
+                            <select name="country">  
+                                <option selected="" value="Default">(Please select a country)</option>  
+                                <option value="AF">Australia</option>  
+                                <option value="AL">Canada</option>  
+                                <option value="DZ">India</option>  
+                                <option value="AS">Russia</option>  
+                                <option value="AD">USA</option>  
+                            </select>
+                        </li>  
+                        <li><label for="zip">ZIP Code:</label></li>  
+                        <li><input type="text" name="zip" /></li>  
+        
+                        <li><label for="email">Email:</label></li>  
+                        <li><input type="text" name="email" size="50" /></li> 
+
+                        <li><label for="contact">Contact No.:</label></li>  
+                        <li><input type="text" name="contact" size="15" /></li> 
+        
+                        <!--TODO//: can not select both genders -->
+                        <li><label id="gender">Sex:</label></li>  
+                        <li><input type="radio" name="msex" value="Male" /><span>Male</span></li>  
+                        <li><input type="radio" name="fsex" value="Female" /><span>Female</span></li>  
+        
+                        <li><label>Language:</label></li>  
+                        <li><input type="checkbox" name="en" value="en" checked /><span>English</span></li>  
+                        <li><input type="checkbox" name="nonen" value="noen" /><span>Non English</span></li>  
+        
+                        <li><label for="desc">Image link:</label></li>  
+                        <li><textarea name="desc" id="desc"></textarea></li>  
+        
+                        <li><input type="submit" name="submit" value="Submit" onclick="formValidation()"/></li>  
+                    </ul>  
+                </form>  
+            </div>
+            <div class= "inputForm2">
+                <form name='registration2' onSubmit="return false;">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Institute</th>
+                            <th>Program</th>
+                            <th>Grade</th>
+                            <th>Year</th>
+                        </tr>
+                        <tr>
+                            <td>College</td>
+                            <td>
+                                <input type="text" id="college_name" size = "10" />
+                            </td>
+                            <td>
+                                <input type="text" id="college_prog" size = "10"/>
+                            </td>
+                            <td>
+                                <input type="text" id="college_grade" size = "10"/>
+                            </td>
+                            <td>
+                                <input type="text" id="college_yr" size = "10"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Class XII School</td>
+                            <td>
+                                <input type="text" id="class12_name" size = "10"/>
+                            </td>
+                            <td>
+                                <input type="text" id="class12_prog"size = "10"/>
+                            </td>
+                            <td>
+                                <input type="text" id="class12_grade"size = "10"/>
+                            </td>
+                            <td>
+                                <input type="text" id="class12_yr"size = "10"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Class X School</td>
+                            <td>
+                                <input type="text" id="class10_name"size = "10"/>
+                            </td>
+                            <td>
+                                <input type="text" id="class10_prog"size = "10"/>
+                            </td>
+                            <td>
+                                <input type="text" id="class10_grade"size = "10"/>
+                            </td>
+                            <td>
+                                <input type="text" id="class10_yr"size = "10"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <label for="stream">College Stream:</label>
+                    <input type="text" id = "stream"/> 
+                    <p id = "achieve">ACHIEVEMENTS:
+                        <br>
+                        <button id="add_achieve" onclick="Add_input()">Add</button>
+                        <br>    
+                    </p>
+                    <br>
+                    <p id = "achieve_extra">EXTRACURRICULARS:
+                        <br>
+                        <button id="add_extra" onclick="Add_input_extra()">Add</button>
+                        <br>    
+                    </p>
+                    <br>
+                    <p>TECHNICAL SKILLS:
+                        <br>
+                        <label for="utilities">Utilities: </label>
+                        <input type="text" id="utilities" size="10"/>
+                        <br> 
+                        <label for="coding">Programming Languages: </label>
+                        <input type="text" id="coding"size = "10"/>
+                    </p>
+                    <input type="submit" name="submit2" value="Submit" onclick="Resume_education()"/>
+                    <!--<button type="button" onclick="Resume_education()">Submit</button>-->
+                </form>
+            </div>
+            <div class = "inputForm3">
+                <form name='registration3' onSubmit="return false;">
+                    <p id = "work_exp">WORK EXPERIENCE:</p>
+                    <br>
+                    <button id="add_work" onclick="Add_input_work()">Add</button>
+                    <br>    
+
+                    <p id = "proj">PROJECTS:</p>
+                    <br>
+                    <button id="add_proj" onclick="Add_input_proj()">Add</button>
+                    <br>  
+
+                    <input type="submit" name="submit3" value="Submit" onclick="Resume_work()"/>
+                </form>
+            </div>
+        </div>
+        <div class="previewMain" >
+            <div class="inputHeader" >PREVIEW RESUME</div>
+            <hr>
+            <div class = "heading">
+                <div class = "heading1">
+                    <h2 id = "full_name" style="line-height: 0mm; font-size: 15px;">   </h2>
+                    <h4 style="line-height: 5mm; font-size: 12px;"> <span id = "degree"></span><span>-</span><span id = "strm"></span><span>,</span><span id = "insti"></span> </h4>
+                    <br>
+                    <br>
+                    <h4 style="line-height: 0mm; font-weight: bold; font-size: 12px; float: left; margin-top: 0px;"> 
+                        E-mail: <a id = "email" href = ""></a> &nbsp &nbsp Contact Number : <a id = "contact_no"></a> </h4>
+                </div>
+                <div class = "heading2">
+                    <img id = "img" src="" width="50"></body>
+                </div>
+            </div>
+            <div class = "Education">
+                <p class = "section_headers" id = "acads" style="float: left;">ACADEMIC QUALIFICATIONS</p>
+                <table class = "table">
+                    <tr>
+                        <th>Year</th>
+                        <th>Program</th>
+                        <th>Institute</th>
+                        <th>CPI/%</th>
+                    </tr>
+                    <tr>
+                        <td id = "clg_yr"></td>
+                        <td id = "clg_prog"></td>
+                        <td id = "clg_name"></td>
+                        <td id = "clg_grade"></td>
+                    </tr>
+                    <tr>
+                        <td id = "12_yr"></td>
+                        <td id = "12_prog"></td>
+                        <td id = "12_name"></td>
+                        <td id = "12_grade"></td>
+                    </tr>
+                    <tr>
+                        <td id = "10_yr"></td>
+                        <td id = "10_prog"></td>
+                        <td id = "10_name"></td>
+                        <td id = "10_grade"></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <p class = "section_headers">SHOLASTIC ACHIEVEMENTS</p>
+                <p class = "contents">
+                    
+                </p>
+            </div>
+            <div id = "work_ex_div">
+                <p class = "section_headers">WORK EXPERIENCE</p>
+            </div>
+            <div id = "project">
+                <p class = "section_headers">PROJECTS & RESEARCH</p>
+            </div>
+            <div>
+                <p class = "section_headers">TECHNICAL SKILLS</p>
+                <table class = "content_table">
+                    <tr>
+                        <td class = "row_label">Utilities</td>
+                        <td id = "util" class = "row_content"></td>
+                    </tr>
+                    <tr>
+                        <td class = "row_label">Programming Languages</td>
+                        <td id = "code" class = "row_content"></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <p class = "section_headers">EXTRACURRICULARS</p>
+                <p class = "contents">
+                </p>
+            </div>
+
+
+
+        </div>
+        
+        <script src="form.js"></script>   
+    </body>
+</html>
