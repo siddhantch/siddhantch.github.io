@@ -1,0 +1,25 @@
+.markAsDone{
+    background-color: red;
+}
+.inprog{
+    background-color: yellow;
+}
+.row{
+    text-align: center;
+}
+#toDoList{
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+td{
+    border-style: solid;
+    padding: 3px;
+}
+th{
+    border-style: solid;
+    padding: 3px;
+}
+body{
+    background-color: cornsilk;
+}
